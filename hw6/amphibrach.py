@@ -26,6 +26,8 @@ def clitic(context):
         return random.choice(clitics_2).replace("\n", "")
     return random.choice(clitics_3).replace("\n", "")
 
+# все дальнейшие функции не будут иметь аргументов
+
 # verse1
 
 def noun_1():
