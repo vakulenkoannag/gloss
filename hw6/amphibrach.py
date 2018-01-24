@@ -144,7 +144,7 @@ def verse5():
     # эта функция собирает строчку вида "обходит владенья барон."
     return verb_3() + ' ' + noun_7() + ' ' + noun_8() + punctuation()
 
-def make_verse_1():
+def make_verse_f():
     # эта функция выбирает случайный номер из 1, 2, 3 (строки с женской клаузулой) и возвращает соответствующую строчку
     verse = random.choice([1,2,3])
     if verse == 1:
@@ -154,7 +154,7 @@ def make_verse_1():
     else:
         return verse3()
 
-def make_verse_2():
+def make_verse_m():
     # эта функция выбирает случайный номер из 4, 5 (строки с мужской клаузулой) и возвращает соответствующую строчку
     verse = random.choice([4,5])
     if verse == 4:
@@ -164,5 +164,5 @@ def make_verse_2():
 
 # этот код распечатывает 4 случайные строчки, чтобы получилась строфа. 
 for i in range(2):
-    print(make_verse_1())
-    print(make_verse_2())
+    print(make_verse_f())
+    print(make_verse_m())
