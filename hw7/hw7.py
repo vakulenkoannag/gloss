@@ -7,7 +7,9 @@ def getwords(filename):
         text = f.read().lower()
     for symbol in ['.', ',', ':', ';', '—', '!', '?', '*', '&', '"', '"', '«', '»', '…', '/', '(', ')']:
         if symbol in text:
-            text = text.replace(symbol, '')
+            text = text.replace(symbol, ' ')
+            # replace на пробел, потому что в текстовом файле кое-где нет пробелов в сочетании "слово знак препинания слово" и два слова слипаются в одно.
+            # такое, думаю, может случиться в любом файле, а не только в данном для примера.
     wordsfromtext = text.split()
     return wordsfromtext
 
