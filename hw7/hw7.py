@@ -43,7 +43,7 @@ def final():
         print('Такого файла тут нет! Попробуйте ввести другое название.')
         filename = nameinput()
     else:
-        print('Всего в тексте разных существительных с суффиксом -ness:', count(dictionary(getwords(filename))),
+        print('Всего в тексте разных существительных с суффиксом «ness»:', count(dictionary(getwords(filename))),
         '\nИз них максимальную частотность имеет:', mostpopular(dictionary(getwords(filename))))
 
 final()
