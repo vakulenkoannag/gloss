@@ -17,28 +17,28 @@ def game():
     for letter in chosenword:
        lettercount .append('.')
     ellipsis = ''.join(lettercount)
-    print('Слово загадано. Подсказка:', (makedict()[chosenword][0]), ellipsis)
+    print('Слово загадано. Первая подсказка:', (makedict()[chosenword][0]), ellipsis)
     userword = input('Введите слово: ')
     if userword == chosenword:
         print('Вы угадали!')
     else:
-        print('Подсказка:', makedict()[chosenword][1], ellipsis)
-        userword = input('Неправильно! Введите слово: ')
+        print('Неправильно! Вторая подсказка:', makedict()[chosenword][1], ellipsis)
+        userword = input('Введите слово: ')
         if userword == chosenword:
             print('Вы угадали!')
         else:
-            print('Подсказка:', makedict()[chosenword][2], ellipsis)
-            userword = input('Попробуйте еще раз! Введите слово: ')
+            print('Попробуйте еще раз! Третья подсказка:', makedict()[chosenword][2], ellipsis)
+            userword = input('Введите слово: ')
             if userword == chosenword:
                 print('Вы угадали!')
             else:
-                print('Подсказка:', makedict()[chosenword][3], ellipsis)
-                userword = input('Снова неверно! Введите слово: ')
+                print('Снова неверно! Четвертая подсказка:', makedict()[chosenword][3], ellipsis)
+                userword = input('Введите слово: ')
                 if userword == chosenword:
                     print('Вы угадали!')
                 else:
-                    print('Подсказка:', makedict()[chosenword][4], ellipsis)
-                    userword = input('Последняя попытка! Введите слово: ')
+                    print('Неправильно! Последняя подсказка:', makedict()[chosenword][4], ellipsis)
+                    userword = input('Введите слово: ')
                     if userword == chosenword:
                         print('Вы угадали!')
                     else:
