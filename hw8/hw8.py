@@ -11,33 +11,36 @@ def makedict():
             worddic = dic.setdefault(word, hints)
     return dic
 
-def game():
-    chosenword = random.choice(list(makedict().keys()))
+def ellipsis(chosenword):
     lettercount = []
     for letter in chosenword:
-       lettercount .append('.')
+       lettercount.append('.')
     ellipsis = ''.join(lettercount)
-    print('Слово загадано. Первая подсказка:', (makedict()[chosenword][0]), ellipsis)
+    return ellipsis
+
+def game():
+    chosenword = random.choice(list(makedict().keys()))
+    print('Слово загадано. Первая подсказка:', (makedict()[chosenword][0]), ellipsis(chosenword))
     userword = input('Введите слово: ')
     if userword == chosenword:
         print('Вы угадали!')
     else:
-        print('Неправильно! Вторая подсказка:', makedict()[chosenword][1], ellipsis)
+        print('Неправильно! Вторая подсказка:', makedict()[chosenword][1], ellipsis(chosenword))
         userword = input('Введите слово: ')
         if userword == chosenword:
             print('Вы угадали!')
         else:
-            print('Попробуйте еще раз! Третья подсказка:', makedict()[chosenword][2], ellipsis)
+            print('Попробуйте еще раз! Третья подсказка:', makedict()[chosenword][2], ellipsis(chosenword))
             userword = input('Введите слово: ')
             if userword == chosenword:
                 print('Вы угадали!')
             else:
-                print('Снова неверно! Четвертая подсказка:', makedict()[chosenword][3], ellipsis)
+                print('Снова неверно! Четвертая подсказка:', makedict()[chosenword][3], ellipsis(chosenword))
                 userword = input('Введите слово: ')
                 if userword == chosenword:
                     print('Вы угадали!')
                 else:
-                    print('Неправильно! Последняя подсказка:', makedict()[chosenword][4], ellipsis)
+                    print('Мимо! Последняя подсказка:', makedict()[chosenword][4], ellipsis(chosenword))
                     userword = input('Введите слово: ')
                     if userword == chosenword:
                         print('Вы угадали!')
