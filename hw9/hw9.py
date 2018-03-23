@@ -29,7 +29,7 @@ def searchwords(text):
 
 def listforms(found):
     for key, value in found.items() :
-        print (key)
+        print(key)
 
 def checkfile(filename):
     try:
