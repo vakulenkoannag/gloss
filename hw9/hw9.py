@@ -18,8 +18,8 @@ def searchwords(text):
             'найден[оаы]?н?[а-я]?[а-я]?[а-я]?\s', 'наш[её]?л[аои]?с?[ья]?\s',
             'нашедш[а-я][а-я]?с?[ья]?\s']
     for form in allforms:
-        form_found = re.findall(form, text)
-        for word in form_found:
+        foundforms = re.findall(form, text)
+        for word in foundforms:
             word = word.strip()
             if word in found:
                 found[word] += 1
