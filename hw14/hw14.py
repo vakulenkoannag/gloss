@@ -11,7 +11,7 @@ def clean_everything(text):
     text = text.replace('Mrs.', 'Mrs')
     text = text.replace('Mr.', 'Mr')
     phrases = re.split('[.!?…]+', text)
-    clean_phrases = [re.sub('[,:;—–()&“”«»/*\"\'\n]', '', phrase) for phrase in phrases]
+    clean_phrases = [re.sub('[,:;—–­()&“”«»/*\"\'\n]', '', phrase) for phrase in phrases]
     return clean_phrases
 
 def get_title_words(clean_phrases):
@@ -20,10 +20,8 @@ def get_title_words(clean_phrases):
         length = len(words)
         title_words = []
         if length > 10:
-            for word in words:
-                if word.istitle():
-                    title_words.append(word)
-            print(title_words)
+            get_title_words = [title_words.append(word) for word in words if word.istitle()]
+            print('; '.join(title_words))
 
 def final():
     text = open_file()
